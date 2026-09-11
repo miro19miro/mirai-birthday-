@@ -286,6 +286,17 @@ function startHoldingHand(event) {
 
         galleryHand.classList.add("hidden");
 galleryContent.classList.remove("hidden");
+        // Unlock leaderboard when gallery is unlocked
+const galleryLeaderboard =
+    document.getElementById("gallery-leaderboard");
+
+if (galleryLeaderboard) {
+
+    galleryLeaderboard.classList.remove("hidden");
+
+    loadLeaderboard();
+
+}
 
         showToast("Welcome to Mirai's memories! 🥹💜");
 
