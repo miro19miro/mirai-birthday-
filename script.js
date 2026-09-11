@@ -134,23 +134,22 @@ function getNextBirthday() {
     let year = now.getFullYear();
 
     let birthday = new Date(
-        year,
-        9,       // October = 9
-        9,       // Day 9
-        0,
-        0,
-        0
-    );
-
+    year,
+    8,       // September = 8
+    10,      // Day 10
+    0,
+    0,
+    0
+);
     if (birthday <= now) {
         birthday = new Date(
-            year + 1,
-            9,
-            9,
-            0,
-            0,
-            0
-        );
+    year + 1,
+    8,
+    10,
+    0,
+    0,
+    0
+);
     }
 
     return birthday;
@@ -242,14 +241,12 @@ if (galleryUnlock) {
 
         if (enteredCode === CORRECT_GALLERY_CODE) {
 
-            galleryLock.style.display = "none";
+    galleryLock.classList.add("hidden");
+    galleryHand.classList.remove("hidden");
 
-            galleryHand.style.display = "flex";
+    galleryError.textContent = "";
 
-            galleryError.textContent = "";
-
-            showToast("Correct code! 🫴💜");
-
+    showToast("Correct code! 🫴💜");
         } else {
 
             galleryError.textContent =
@@ -287,9 +284,8 @@ function startHoldingHand(event) {
 
         galleryHand.classList.remove("holding");
 
-        galleryHand.style.display = "none";
-
-        galleryContent.style.display = "block";
+        galleryHand.classList.add("hidden");
+galleryContent.classList.remove("hidden");
 
         showToast("Welcome to Mirai's memories! 🥹💜");
 
@@ -1194,14 +1190,9 @@ if (startQuizButton) {
             selectedAnswer = null;
 
 
-            quizStart.style.display =
-                "none";
-
-            quizResult.style.display =
-                "none";
-
-            quizGame.style.display =
-                "block";
+            quizStart.classList.add("hidden");
+quizResult.classList.add("hidden");
+quizGame.classList.remove("hidden");
 
 
             showQuestion();
@@ -1388,12 +1379,8 @@ if (nextQuestionButton) {
 
 async function finishQuiz() {
 
-    quizGame.style.display =
-        "none";
-
-
-    quizResult.style.display =
-        "block";
+    quizGame.classList.add("hidden");
+quizResult.classList.remove("hidden");
 
 
     resultName.textContent =
