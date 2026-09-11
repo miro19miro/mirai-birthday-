@@ -1380,55 +1380,48 @@ if (nextQuestionButton) {
 async function finishQuiz() {
 
     quizGame.classList.add("hidden");
-quizResult.classList.remove("hidden");
+    quizResult.classList.remove("hidden");
 
-
-    resultName.textContent =
-        playerName;
-
+    resultName.textContent = playerName;
 
     finalScore.textContent =
         `${quizScore} / ${questions.length}`;
 
-
     launchConfetti();
 
-
     try {
+
+        // Save result to Firebase
         await addDoc(
             collection(db, "quizResults"),
             {
                 name: playerName,
-                score: quizScore,
-                total: questions.length,
+                score: Number(quizScore),
+                total: Number(questions.length),
                 createdAt: serverTimestamp()
             }
         );
 
+        showToast("Your score was saved! 🏆💜");
 
-        loadLeaderboard();
-
+        // Reload leaderboard
+        await loadLeaderboard();
 
     } catch (error) {
 
-        console.error(
-            "Quiz result error:",
-            error
+        console.error("Quiz result error:", error);
+
+        showToast(
+            "The result appeared, but couldn't be saved 😭"
         );
-
     }
-
 }
-
-
 // ======================================================
 // 24. LEADERBOARD
 // ======================================================
-
 async function loadLeaderboard() {
 
     if (!leaderboardList) return;
-
 
     try {
 
@@ -1437,28 +1430,37 @@ async function loadLeaderboard() {
                 collection(db, "quizResults")
             );
 
-
         const results = [];
-
 
         snapshot.forEach(doc => {
 
+            const data = doc.data();
+
+            // Ignore old/broken documents
+            if (
+                typeof data.score !== "number" ||
+                !data.name
+            ) {
+                return;
+            }
+
             results.push({
                 id: doc.id,
-                ...doc.data()
+                name: data.name,
+                score: Number(data.score),
+                total: Number(data.total) || 20,
+                createdAt: data.createdAt
             });
 
         });
 
 
+        // Highest score first
         results.sort((a, b) => {
 
             if (b.score !== a.score) {
-
                 return b.score - a.score;
-
             }
-
 
             const dateA =
                 a.createdAt?.seconds || 0;
@@ -1466,9 +1468,7 @@ async function loadLeaderboard() {
             const dateB =
                 b.createdAt?.seconds || 0;
 
-
             return dateA - dateB;
-
         });
 
 
@@ -1478,43 +1478,42 @@ async function loadLeaderboard() {
         if (results.length === 0) {
 
             leaderboardList.innerHTML = `
-                <p>No scores yet 👀</p>
+                <p class="empty-message">
+                    No scores yet 👀💜
+                </p>
             `;
 
             return;
         }
 
 
-        results.forEach(
-            (result, index) => {
+        results.forEach((result, index) => {
 
-                const row =
-                    document.createElement("div");
+            const row =
+                document.createElement("div");
 
-
-                row.className =
-                    "leaderboard-row";
+            row.className =
+                "leaderboard-row";
 
 
-                row.innerHTML = `
-                    <span class="rank">
-                        #${index + 1}
-                    </span>
+            row.innerHTML = `
+                <span class="rank">
+                    #${index + 1}
+                </span>
 
-                    <span class="leader-name">
-                        ${escapeHTML(result.name)}
-                    </span>
+                <span class="leader-name">
+                    ${escapeHTML(result.name)}
+                </span>
 
-                    <span class="leader-score">
-                        ${result.score}/${result.total || 20}
-                    </span>
-                `;
+                <span class="leader-score">
+                    ${result.score}/${result.total}
+                </span>
+            `;
 
 
-                leaderboardList.appendChild(row);
+            leaderboardList.appendChild(row);
 
-            }
-        );
+        });
 
 
     } catch (error) {
@@ -1524,11 +1523,14 @@ async function loadLeaderboard() {
             error
         );
 
+        leaderboardList.innerHTML = `
+            <p class="empty-message">
+                Couldn't load the leaderboard 😭
+            </p>
+        `;
     }
 }
 
-
-loadLeaderboard();
 
 
 // ======================================================
@@ -1609,3 +1611,31 @@ $$('a[href^="#"]').forEach(link => {
 console.log(
     "💜 Mirai's Birthday Website is running!"
 );
+// ======================================================
+// BIRTHDAY MUSIC
+// ======================================================
+
+const birthdayMusic = document.getElementById("birthday-music");
+
+if (birthdayMusic) {
+
+    birthdayMusic.volume = 0.5;
+
+    // Try to play automatically
+    birthdayMusic.play().catch(() => {
+
+        // Browser blocked autoplay
+        // Start music after the first user interaction
+
+        const startMusic = () => {
+
+            birthdayMusic.play().catch(() => {});
+
+            document.removeEventListener("click", startMusic);
+            document.removeEventListener("touchstart", startMusic);
+        };
+
+        document.addEventListener("click", startMusic);
+        document.addEventListener("touchstart", startMusic);
+    });
+}
