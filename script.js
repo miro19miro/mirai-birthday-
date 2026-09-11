@@ -1611,31 +1611,82 @@ $$('a[href^="#"]').forEach(link => {
 console.log(
     "💜 Mirai's Birthday Website is running!"
 );
-// ======================================================
-// BIRTHDAY MUSIC
-// ======================================================
+ // ======================================================
+ // BIRTHDAY MUSIC
+ // ======================================================
 
-const birthdayMusic = document.getElementById("birthday-music");
+ const birthdayMusic = document.getElementById("birthday-music");
 
-if (birthdayMusic) {
+ if (birthdayMusic) {
 
-    birthdayMusic.volume = 0.5;
+     birthdayMusic.volume = 0.6;
 
-    // Try to play automatically
-    birthdayMusic.play().catch(() => {
+     // Try autoplay immediately
+     const playMusic = () => {
 
-        // Browser blocked autoplay
-        // Start music after the first user interaction
+         birthdayMusic.play()
+             .then(() => {
 
-        const startMusic = () => {
+                 console.log("🎵 Mirai music is playing!");
 
-            birthdayMusic.play().catch(() => {});
+             })
+             .catch((error) => {
 
-            document.removeEventListener("click", startMusic);
-            document.removeEventListener("touchstart", startMusic);
-        };
+                 console.log(
+                     "Autoplay blocked. Waiting for user interaction."
+                 );
 
-        document.addEventListener("click", startMusic);
-        document.addEventListener("touchstart", startMusic);
-    });
-}
+             });
+     };
+
+
+     // Try immediately
+     playMusic();
+
+
+     // If browser blocks autoplay,
+     // start after the first interaction
+     const startMusicAfterInteraction = () => {
+
+         birthdayMusic.play()
+             .then(() => {
+
+                 console.log("🎵 Music started!");
+
+                 document.removeEventListener(
+                     "click",
+                     startMusicAfterInteraction
+                 );
+
+                 document.removeEventListener(
+                     "touchstart",
+                     startMusicAfterInteraction
+                 );
+
+                 document.removeEventListener(
+                     "pointerdown",
+                     startMusicAfterInteraction
+                 );
+
+             })
+             .catch(() => {});
+
+     };
+
+
+     document.addEventListener(
+         "click",
+         startMusicAfterInteraction
+     );
+
+     document.addEventListener(
+         "touchstart",
+         startMusicAfterInteraction,
+         { passive: true }
+     );
+
+     document.addEventListener(
+         "pointerdown",
+         startMusicAfterInteraction
+     );
+ }
