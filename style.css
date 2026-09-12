@@ -91,8 +91,8 @@ a {
     width: 100%;
     min-height: 100vh;
     padding: 100px 20px;
-    overflow: hidden;
-}
+    overflow: visible;
+} 
 
 .section-heading {
     position: relative;
@@ -2566,3 +2566,15 @@ a {
     }
 
    }
+
+/* =========================================
+   KEEP SECTION PHOTOS ABOVE CONTENT
+========================================= */
+
+.section-hanging-photo {
+    pointer-events: none;
+}
+
+.section-hanging-photo img {
+    pointer-events: none;
+}
