@@ -2269,3 +2269,295 @@ a {
     opacity: 0;
     pointer-events: none;
 }
+
+/* =========================================
+   MAGICAL HANGING PHOTOS
+========================================= */
+
+.hanging-photo {
+    position: absolute;
+
+    width: clamp(180px, 18vw, 280px);
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform: translateY(-180px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================
+   POSITION
+========================================= */
+
+.hanging-gallery {
+    right: 2%;
+}
+
+.hanging-story {
+    left: 2%;
+}
+
+.hanging-add-photo {
+    right: 2%;
+}
+
+.hanging-quiz {
+    left: 2%;
+}
+
+
+/* =========================================
+   STRING
+========================================= */
+
+.hanging-string {
+    position: absolute;
+
+    top: -180px;
+    left: 50%;
+
+    width: 2px;
+    height: 180px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0),
+            rgba(117,76,130,.75)
+        );
+
+    box-shadow:
+        0 0 5px rgba(117,76,130,.25);
+}
+
+
+/* =========================================
+   FRAME
+========================================= */
+
+.hanging-frame {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    padding: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaff,
+            #ead5ed,
+            #fffaff
+        );
+
+    border: 3px solid #8c5798;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 18px 35px rgba(65,25,75,.25),
+        0 4px 10px rgba(65,25,75,.15);
+
+    transform-origin: top center;
+
+    animation:
+        hangingSwing 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.hanging-frame img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+.hanging-decor {
+    position: absolute;
+
+    z-index: 5;
+
+    font-size: clamp(22px, 3vw, 38px);
+
+    filter:
+        drop-shadow(
+            0 4px 5px rgba(0,0,0,.2)
+        );
+
+    animation:
+        decorationFloat 2.8s ease-in-out infinite;
+}
+
+.decor-1 {
+    top: -22px;
+    left: -20px;
+}
+
+.decor-2 {
+    right: -20px;
+    bottom: -18px;
+
+    animation-delay: .7s;
+}
+
+
+/* =========================================
+   LIGHT SHINE
+========================================= */
+
+.frame-shine {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,.35),
+            transparent 35%,
+            transparent 70%,
+            rgba(255,255,255,.18)
+        );
+}
+
+
+/* =========================================
+   SWING
+========================================= */
+
+@keyframes hangingSwing {
+
+    0% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(-2deg);
+    }
+
+}
+
+
+/* =========================================
+   DECORATION FLOAT
+========================================= */
+
+@keyframes decorationFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =========================================
+   WHEN SECTION BECOMES VISIBLE
+========================================= */
+
+.hanging-photo.hanging-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hanging-photo {
+        width: 125px;
+    }
+
+    .hanging-gallery,
+    .hanging-add-photo {
+        right: 4px;
+    }
+
+    .hanging-story,
+    .hanging-quiz {
+        left: 4px;
+    }
+
+    .hanging-string {
+        height: 120px;
+        top: -120px;
+    }
+
+    .hanging-decor {
+        font-size: 23px;
+    }
+
+    .decor-1 {
+        top: -15px;
+        left: -13px;
+    }
+
+    .decor-2 {
+        right: -13px;
+        bottom: -13px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 430px) {
+
+    .hanging-photo {
+        width: 105px;
+    }
+
+    .hanging-string {
+        height: 90px;
+        top: -90px;
+    }
+
+}
