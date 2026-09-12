@@ -2271,15 +2271,15 @@ a {
 }
 
 /* =========================================
-   MAGICAL HANGING PHOTOS
+   MAGICAL SECTION HANGING PHOTOS
 ========================================= */
 
-.hanging-photo {
+.section-hanging-photo {
     position: absolute;
 
     width: clamp(180px, 18vw, 280px);
 
-    z-index: 3;
+    z-index: 2;
 
     pointer-events: none;
 
@@ -2289,27 +2289,31 @@ a {
 
     transition:
         opacity 0.8s ease,
-        transform 1.2s cubic-bezier(.22,1,.36,1);
+        transform 1.2s cubic-bezier(.22, 1, .36, 1);
 }
 
 
 /* =========================================
-   POSITION
+   SECTION POSITIONS
 ========================================= */
 
 .hanging-gallery {
+    top: 40px;
     right: 2%;
 }
 
 .hanging-story {
+    top: 40px;
     left: 2%;
 }
 
 .hanging-add-photo {
+    top: 40px;
     right: 2%;
 }
 
 .hanging-quiz {
+    top: 40px;
     left: 2%;
 }
 
@@ -2318,7 +2322,7 @@ a {
    STRING
 ========================================= */
 
-.hanging-string {
+.section-hanging-photo .hanging-string {
     position: absolute;
 
     top: -180px;
@@ -2333,11 +2337,11 @@ a {
         linear-gradient(
             to bottom,
             rgba(255,255,255,0),
-            rgba(117,76,130,.75)
+            rgba(117,76,130,.8)
         );
 
     box-shadow:
-        0 0 5px rgba(117,76,130,.25);
+        0 0 5px rgba(60,27,78,.25);
 }
 
 
@@ -2345,10 +2349,11 @@ a {
    FRAME
 ========================================= */
 
-.hanging-frame {
+.section-hanging-photo .hanging-frame {
     position: relative;
 
     width: 100%;
+
     aspect-ratio: 3 / 4;
 
     padding: 9px;
@@ -2372,7 +2377,7 @@ a {
     transform-origin: top center;
 
     animation:
-        hangingSwing 4.5s ease-in-out infinite;
+        sectionPhotoSwing 4.5s ease-in-out infinite;
 }
 
 
@@ -2380,7 +2385,7 @@ a {
    IMAGE
 ========================================= */
 
-.hanging-frame img {
+.section-hanging-photo .hanging-frame img {
     display: block;
 
     width: 100%;
@@ -2396,7 +2401,7 @@ a {
    DECORATIONS
 ========================================= */
 
-.hanging-decor {
+.section-hanging-photo .hanging-decor {
     position: absolute;
 
     z-index: 5;
@@ -2409,15 +2414,15 @@ a {
         );
 
     animation:
-        decorationFloat 2.8s ease-in-out infinite;
+        sectionDecorationFloat 2.8s ease-in-out infinite;
 }
 
-.decor-1 {
+.section-hanging-photo .decor-1 {
     top: -22px;
     left: -20px;
 }
 
-.decor-2 {
+.section-hanging-photo .decor-2 {
     right: -20px;
     bottom: -18px;
 
@@ -2426,10 +2431,10 @@ a {
 
 
 /* =========================================
-   LIGHT SHINE
+   SHINE
 ========================================= */
 
-.frame-shine {
+.section-hanging-photo .frame-shine {
     position: absolute;
 
     inset: 0;
@@ -2453,7 +2458,7 @@ a {
    SWING
 ========================================= */
 
-@keyframes hangingSwing {
+@keyframes sectionPhotoSwing {
 
     0% {
         transform: rotate(-2deg);
@@ -2474,7 +2479,7 @@ a {
    DECORATION FLOAT
 ========================================= */
 
-@keyframes decorationFloat {
+@keyframes sectionDecorationFloat {
 
     0%, 100% {
         transform:
@@ -2492,10 +2497,10 @@ a {
 
 
 /* =========================================
-   WHEN SECTION BECOMES VISIBLE
+   VISIBLE
 ========================================= */
 
-.hanging-photo.hanging-visible {
+.section-hanging-photo.hanging-visible {
     opacity: 1;
 
     transform:
@@ -2509,7 +2514,7 @@ a {
 
 @media (max-width: 768px) {
 
-    .hanging-photo {
+    .section-hanging-photo {
         width: 125px;
     }
 
@@ -2523,21 +2528,21 @@ a {
         left: 4px;
     }
 
-    .hanging-string {
+    .section-hanging-photo .hanging-string {
         height: 120px;
         top: -120px;
     }
 
-    .hanging-decor {
+    .section-hanging-photo .hanging-decor {
         font-size: 23px;
     }
 
-    .decor-1 {
+    .section-hanging-photo .decor-1 {
         top: -15px;
         left: -13px;
     }
 
-    .decor-2 {
+    .section-hanging-photo .decor-2 {
         right: -13px;
         bottom: -13px;
     }
@@ -2551,13 +2556,13 @@ a {
 
 @media (max-width: 430px) {
 
-    .hanging-photo {
+    .section-hanging-photo {
         width: 105px;
     }
 
-    .hanging-string {
+    .section-hanging-photo .hanging-string {
         height: 90px;
         top: -90px;
     }
 
-}
+   }
