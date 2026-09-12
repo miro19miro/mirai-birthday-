@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
+<meta name="description" content="A special birthday website made for Mirai 💜">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirai's Birthday 💜</title>
 
-    <meta name="description" content="A special birthday website made for Mirai 💜">
+<link rel="stylesheet" href="style.css">
 
-    <title>Mirai's Birthday 💜</title>
+</head><body><!-- ========================================
+     MAGICAL BIRTHDAY DOOR
+========================================= -->
 
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-
-<body>
-
-    <!-- Magical Birthday Door -->
 <div id="birthday-door-intro">
 
     <div class="door-hint">
@@ -26,6 +20,7 @@
     </div>
 
     <div class="birthday-door left-door">
+
         <div class="door-decoration">
             <span>🍉</span>
             <span>🪄</span>
@@ -48,9 +43,11 @@
         </div>
 
         <div class="door-knob">✨</div>
+
     </div>
 
     <div class="birthday-door right-door">
+
         <div class="door-decoration">
             <span>🪄</span>
             <span>🍉</span>
@@ -73,6 +70,7 @@
         </div>
 
         <div class="door-knob">✨</div>
+
     </div>
 
     <div class="door-center">
@@ -81,793 +79,915 @@
     </div>
 
 </div>
-    
-    <!-- ========================================
-         FLOATING BALLOONS
-    ========================================= -->
-
-    <div class="balloons" aria-hidden="true">
-
-        <span class="balloon balloon-1">🎈</span>
-        <span class="balloon balloon-2">🎈</span>
-        <span class="balloon balloon-3">🎈</span>
-        <span class="balloon balloon-4">🎈</span>
-        <span class="balloon balloon-5">🎈</span>
-        <span class="balloon balloon-6">🎈</span>
-        <span class="balloon balloon-7">🎈</span>
-        <span class="balloon balloon-8">🎈</span>
-
-    </div>
 
 
-    <!-- ========================================
-         CONFETTI CONTAINER
-    ========================================= -->
+<!-- ========================================
+     FLOATING BALLOONS
+========================================= -->
 
-    <div id="confetti-container" aria-hidden="true"></div>
+<div class="balloons" aria-hidden="true">
 
+    <span class="balloon balloon-1">🎈</span>
+    <span class="balloon balloon-2">🎈</span>
+    <span class="balloon balloon-3">🎈</span>
+    <span class="balloon balloon-4">🎈</span>
+    <span class="balloon balloon-5">🎈</span>
+    <span class="balloon balloon-6">🎈</span>
+    <span class="balloon balloon-7">🎈</span>
+    <span class="balloon balloon-8">🎈</span>
 
-    <!-- ========================================
-         MAIN WEBSITE
-    ========================================= -->
-
-    <main>
-    <!-- Hanging Section Photos -->
-
-    <div class="hanging-photo hanging-gallery">
-        <div class="hanging-string"></div>
-
-        <div class="hanging-frame">
-            <div class="hanging-decor decor-1">🍉</div>
-            <div class="hanging-decor decor-2">🪄</div>
-
-            <img src="images/main-gallery.jpg" alt="Mirai Gallery">
-
-        </div>
-    </div>
+</div>
 
 
-    <div class="hanging-photo hanging-story">
-        <div class="hanging-string"></div>
+<!-- ========================================
+     CONFETTI CONTAINER
+========================================= -->
 
-        <div class="hanging-frame">
-            <div class="hanging-decor decor-1">🪄</div>
-            <div class="hanging-decor decor-2">🍉</div>
-
-            <img src="images/main-story.jpg" alt="Mirai Stories">
-
-        </div>
-    </div>
+<div id="confetti-container" aria-hidden="true"></div>
 
 
-    <div class="hanging-photo hanging-add-photo">
-        <div class="hanging-string"></div>
+<!-- ========================================
+     MAIN WEBSITE
+========================================= -->
 
-        <div class="hanging-frame">
-            <div class="hanging-decor decor-1">🍉</div>
-            <div class="hanging-decor decor-2">✨</div>
-
-            <img src="images/main-photo.jpg" alt="Add Photo">
-
-        </div>
-    </div>
+<main>
 
 
-    <div class="hanging-photo hanging-quiz">
-        <div class="hanging-string"></div>
-
-        <div class="hanging-frame">
-            <div class="hanging-decor decor-1">🪄</div>
-            <div class="hanging-decor decor-2">🍉</div>
-
-            <img src="images/main-quiz.jpg" alt="Mirai Quiz">
-
-        </div>
-    </div>
-
-
-    <!-- 1. WELCOME SECTION -->
+    <!-- ====================================
+         1. WELCOME SECTION
+    ====================================== -->
 
     <section id="home" class="section welcome-section">
 
-        <!-- ====================================
-             1. WELCOME SECTION
-        ====================================== -->
 
-        <section id="home" class="section welcome-section">
+        <!-- Hanging Mirai Photo -->
 
-            <!-- Hanging Mirai Photo -->
+        <div class="hanging-photo">
 
-            <div class="hanging-photo">
+            <div class="photo-string"></div>
 
-                <div class="photo-string"></div>
+            <div class="photo-frame">
 
-                <div class="photo-frame">
-
-                    <img src="images/mirai-main.jpg" alt="Mirai">
-
-                </div>
+                <img src="images/mirai-main.jpg" alt="Mirai">
 
             </div>
 
-
-            <!-- Welcome Text -->
-
-            <div class="welcome-content">
-
-                <p class="small-intro">
-                    A little surprise for someone special 💜
-                </p>
-
-                <h1>
-                    Hiii, It's
-                    <span>Mirai Birthday 🥳</span>
-                </h1>
-
-                <p class="birthday-message">
-                    Say for her
-                    <strong>Happy Birthday 🎁</strong>
-                </p>
+        </div>
 
 
-                <!-- Countdown -->
+        <!-- Welcome Text -->
 
-                <button id="countdown" class="countdown-card" type="button">
+        <div class="welcome-content">
 
-                    <span class="countdown-title">
-                        Counting down to Mirai's Birthday ✨
-                    </span>
+            <p class="small-intro">
+                A little surprise for someone special 💜
+            </p>
 
-                    <div class="countdown-numbers">
+            <h1>
+                Hiii, It's
+                <span>Mirai Birthday 🥳</span>
+            </h1>
 
-                        <div class="time-box">
-                            <span id="days">00</span>
-                            <small>Days</small>
-                        </div>
+            <p class="birthday-message">
+                Say for her
+                <strong>Happy Birthday 🎁</strong>
+            </p>
 
-                        <span class="time-separator">:</span>
 
-                        <div class="time-box">
-                            <span id="hours">00</span>
-                            <small>Hours</small>
-                        </div>
+            <!-- Countdown -->
 
-                        <span class="time-separator">:</span>
+            <button id="countdown" class="countdown-card" type="button">
 
-                        <div class="time-box">
-                            <span id="minutes">00</span>
-                            <small>Minutes</small>
-                        </div>
+                <span class="countdown-title">
+                    Counting down to Mirai's Birthday ✨
+                </span>
 
-                        <span class="time-separator">:</span>
+                <div class="countdown-numbers">
 
-                        <div class="time-box">
-                            <span id="seconds">00</span>
-                            <small>Seconds</small>
-                        </div>
-
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <small>Days</small>
                     </div>
 
-                    <span class="countdown-hint">
-                        Tap me for some birthday magic 🎊
-                    </span>
+                    <span class="time-separator">:</span>
 
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+
+                    <span class="time-separator">:</span>
+
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+
+                    <span class="time-separator">:</span>
+
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+
+                </div>
+
+                <span class="countdown-hint">
+                    Tap me for some birthday magic 🎊
+                </span>
+
+            </button>
+
+
+            <!-- Start Exploring -->
+
+            <a href="#gallery" class="explore-button">
+                Explore Mirai's World
+                <span>↓</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         2. GALLERY SECTION
+    ====================================== -->
+
+    <section id="gallery" class="section gallery-section">
+
+
+        <!-- Hanging Gallery Photo -->
+
+        <div class="section-hanging-photo hanging-gallery">
+
+            <div class="hanging-string"></div>
+
+            <div class="hanging-frame">
+
+                <div class="hanging-decor decor-1">🍉</div>
+
+                <div class="hanging-decor decor-2">🪄</div>
+
+                <img src="images/main-gallery.jpg" alt="Mirai Gallery">
+
+                <div class="frame-shine"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="section-small-title">
+                Little memories 📸
+            </p>
+
+            <h2>
+                Mirai's
+                <span>Gallery</span>
+            </h2>
+
+            <p>
+                A little collection of beautiful memories 💜
+            </p>
+
+        </div>
+
+
+        <!-- Gallery Lock -->
+
+        <div id="gallery-lock" class="gallery-lock">
+
+            <div class="lock-icon">
+                🔐
+            </div>
+
+            <h3>
+                A secret place 👀
+            </h3>
+
+            <p>
+                Enter the secret code to unlock Mirai's memories
+            </p>
+
+            <div class="code-input-wrapper">
+
+                <input
+                    type="text"
+                    id="gallery-code"
+                    placeholder="Enter secret code"
+                    autocomplete="off"
+                >
+
+                <button id="gallery-unlock" type="button">
+                    Unlock 💜
                 </button>
 
-
-                <!-- Start Exploring -->
-
-                <a href="#gallery" class="explore-button">
-                    Explore Mirai's World
-                    <span>↓</span>
-                </a>
-
             </div>
 
-        </section>
-        <!-- ====================================
-             2. GALLERY SECTION
-        ====================================== -->
+            <p id="gallery-error" class="gallery-error"></p>
 
-        <section id="gallery" class="section gallery-section">
+        </div>
 
-            
-            <div class="section-heading">
 
-                <p class="section-small-title">
-                    Little memories 📸
-                </p>
+        <!-- Gallery Hand -->
 
-                <h2>
-                    Mirai's
-                    <span>Gallery</span>
-                </h2>
+        <div id="gallery-hand" class="gallery-hand hidden">
 
-                <p>
-                    A little collection of beautiful memories 💜
-                </p>
-
+            <div class="hand-icon">
+                🫴
             </div>
 
+            <p>
+                Give me your hand
+            </p>
 
-            <!-- Gallery Lock -->
+            <span>
+                press and hold
+            </span>
 
-            <div id="gallery-lock" class="gallery-lock">
+        </div>
 
-                <div class="lock-icon">
-                    🔐
+
+        <!-- Actual Gallery -->
+
+        <div id="gallery-content" class="gallery-content hidden">
+
+            <div class="gallery-track">
+
+                <div class="gallery-item">
+                    <img src="images/gallery-01.jpg" alt="Mirai memory 1">
                 </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-02.jpg" alt="Mirai memory 2">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-03.jpg" alt="Mirai memory 3">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-04.jpg" alt="Mirai memory 4">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-05.jpg" alt="Mirai memory 5">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-06.jpg" alt="Mirai memory 6">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-07.jpg" alt="Mirai memory 7">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-08.jpg" alt="Mirai memory 8">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-09.jpg" alt="Mirai memory 9">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-10.jpg" alt="Mirai memory 10">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-11.jpg" alt="Mirai memory 11">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-12.jpg" alt="Mirai memory 12">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-13.jpg" alt="Mirai memory 13">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-14.jpg" alt="Mirai memory 14">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-15.jpg" alt="Mirai memory 15">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-16.jpg" alt="Mirai memory 16">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-17.jpg" alt="Mirai memory 17">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-18.jpg" alt="Mirai memory 18">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-19.jpg" alt="Mirai memory 19">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-20.jpg" alt="Mirai memory 20">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-21.jpg" alt="Mirai memory 21">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-22.jpg" alt="Mirai memory 22">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-23.jpg" alt="Mirai memory 23">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-24.jpg" alt="Mirai memory 24">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/gallery-25.jpg" alt="Mirai memory 25">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Gallery Leaderboard -->
+
+        <div id="gallery-leaderboard" class="leaderboard hidden">
+
+            <div class="leaderboard-heading">
+
+                <span>🏆</span>
 
                 <h3>
-                    A secret place 👀
+                    Mirai's Leaderboard
                 </h3>
 
-                <p>
-                    Enter the secret code to unlock Mirai's memories
-                </p>
-
-                <div class="code-input-wrapper">
-
-                    <input type="text" id="gallery-code" placeholder="Enter secret code" autocomplete="off">
-
-                    <button id="gallery-unlock" type="button">
-                        Unlock 💜
-                    </button>
-
-                </div>
-
-                <p id="gallery-error" class="gallery-error"></p>
+                <span>🏆</span>
 
             </div>
 
+            <div id="gallery-leaderboard-list" class="leaderboard-list">
 
-            <!-- Gallery Hand -->
-
-            <div id="gallery-hand" class="gallery-hand hidden">
-
-                <div class="hand-icon">
-                    🫴
-                </div>
-
-                <p>
-                    Give me your hand
+                <p class="empty-leaderboard">
+                    Be the first one to play! 💜
                 </p>
 
-                <span>
-                    press and hold
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         3. WRITE YOUR STORY
+    ====================================== -->
+
+    <section id="stories" class="section stories-section">
+
+
+        <!-- Hanging Story Photo -->
+
+        <div class="section-hanging-photo hanging-story">
+
+            <div class="hanging-string"></div>
+
+            <div class="hanging-frame">
+
+                <div class="hanging-decor decor-1">🪄</div>
+
+                <div class="hanging-decor decor-2">🍉</div>
+
+                <img src="images/main-story.jpg" alt="Mirai Stories">
+
+                <div class="frame-shine"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="section-small-title">
+                Tell us something 💌
+            </p>
+
+            <h2>
+                Write Your
+                <span>Story With Mirai</span>
+            </h2>
+
+            <p>
+                Leave a little piece of your memories here 💜
+            </p>
+
+        </div>
+
+
+        <!-- Story Form -->
+
+        <div class="story-card">
+
+            <form id="story-form">
+
+                <div class="input-group">
+
+                    <label for="story-name">
+                        Your name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="story-name"
+                        placeholder="Write your name..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="story-text">
+                        Your story with Mirai
+                    </label>
+
+                    <textarea
+                        id="story-text"
+                        rows="6"
+                        placeholder="Write something beautiful about Mirai..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="primary-button">
+                    Submit Story 💌
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Stories Cards -->
+
+        <div id="stories-container" class="stories-container">
+
+            <!-- Firebase stories will appear here -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         4. ADD PHOTO
+    ====================================== -->
+
+    <section id="add-photo" class="section add-photo-section">
+
+
+        <!-- Hanging Add Photo -->
+
+        <div class="section-hanging-photo hanging-add-photo">
+
+            <div class="hanging-string"></div>
+
+            <div class="hanging-frame">
+
+                <div class="hanging-decor decor-1">🍉</div>
+
+                <div class="hanging-decor decor-2">✨</div>
+
+                <img src="images/main-photo.jpg" alt="Add Photo">
+
+                <div class="frame-shine"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="section-small-title">
+                Make another memory 📷
+            </p>
+
+            <h2>
+                Add a
+                <span>Photo With Mirai</span>
+            </h2>
+
+            <p>
+                Have a special photo with Mirai?
+                Add it to the memories 💜
+            </p>
+
+        </div>
+
+
+        <div class="photo-upload-card">
+
+            <form id="photo-form">
+
+                <div class="input-group">
+
+                    <label for="photo-name">
+                        Your name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="photo-name"
+                        placeholder="Write your name..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="photo-input">
+
+                    <label for="photo-file">
+
+                        <span class="upload-icon">
+                            📸
+                        </span>
+
+                        <span>
+                            Choose your photo
+                        </span>
+
+                        <small>
+                            Tap here to upload
+                        </small>
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="photo-file"
+                        accept="image/*"
+                        required
+                    >
+
+                </div>
+
+
+                <div id="photo-preview" class="photo-preview hidden">
+
+                    <img
+                        id="preview-image"
+                        src=""
+                        alt="Selected photo"
+                    >
+
+                </div>
+
+
+                <button type="submit" class="primary-button">
+                    Add To Memories 📸
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         5. PLAY WITH MIRAI
+    ====================================== -->
+
+    <section id="quiz" class="section quiz-section">
+
+
+        <!-- Hanging Quiz Photo -->
+
+        <div class="section-hanging-photo hanging-quiz">
+
+            <div class="hanging-string"></div>
+
+            <div class="hanging-frame">
+
+                <div class="hanging-decor decor-1">🪄</div>
+
+                <div class="hanging-decor decor-2">🍉</div>
+
+                <img src="images/main-quiz.jpg" alt="Mirai Quiz">
+
+                <div class="frame-shine"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="section-small-title">
+                How well do you know her? 👀
+            </p>
+
+            <h2>
+                Play With
+                <span>Mirai 🎮</span>
+            </h2>
+
+            <p>
+                Think you know everything about Mirai?
+                Let's find out 👀💜
+            </p>
+
+        </div>
+
+
+        <!-- Quiz Start -->
+
+        <div id="quiz-start" class="quiz-start-card">
+
+            <div class="quiz-icon">
+                🎮
+            </div>
+
+            <h3>
+                Ready to play?
+            </h3>
+
+            <p>
+                Answer 20 questions about Mirai
+                and see how well you know her!
+            </p>
+
+            <div class="input-group">
+
+                <label for="player-name">
+                    Enter your name
+                </label>
+
+                <input
+                    type="text"
+                    id="player-name"
+                    placeholder="Your name..."
+                    required
+                >
+
+            </div>
+
+            <button
+                id="start-quiz"
+                class="primary-button"
+                type="button"
+            >
+                Play With Mirai 🎮
+            </button>
+
+        </div>
+
+
+        <!-- Quiz Game -->
+
+        <div id="quiz-game" class="quiz-game hidden">
+
+            <div class="quiz-top">
+
+                <span id="question-number">
+                    Question 1 / 20
+                </span>
+
+                <span id="current-score">
+                    Score: 0
                 </span>
 
             </div>
 
 
-            <!-- Actual Gallery -->
+            <div class="question-card">
 
-            <div id="gallery-content" class="gallery-content hidden">
+                <h3 id="question-text">
+                    Question goes here
+                </h3>
 
-                <div class="gallery-track">
+                <div
+                    id="answer-options"
+                    class="answer-options"
+                >
 
-                    <div class="gallery-item">
-                        <img src="images/gallery-01.jpg" alt="Mirai memory 1">
-                    </div>
+                    <!-- Options inserted by JavaScript -->
 
-                    <div class="gallery-item">
-                        <img src="images/gallery-02.jpg" alt="Mirai memory 2">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-03.jpg" alt="Mirai memory 3">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-04.jpg" alt="Mirai memory 4">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-05.jpg" alt="Mirai memory 5">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-06.jpg" alt="Mirai memory 6">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-07.jpg" alt="Mirai memory 7">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-08.jpg" alt="Mirai memory 8">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-09.jpg" alt="Mirai memory 9">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-10.jpg" alt="Mirai memory 10">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-11.jpg" alt="Mirai memory 11">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="images/gallery-12.jpg" alt="Mirai memory 12">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-13.jpg" alt="Mirai memory 13">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-14.jpg" alt="Mirai memory 14">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-15.jpg" alt="Mirai memory 15">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-16.jpg" alt="Mirai memory 16">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-17.jpg" alt="Mirai memory 17">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-18.jpg" alt="Mirai memory 18">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-19.jpg" alt="Mirai memory 19">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-20.jpg" alt="Mirai memory 20">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-21.jpg" alt="Mirai memory 21">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-22.jpg" alt="Mirai memory 22">
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="images/gallery-23.jpg" alt="Mirai memory 23">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-24.jpg" alt="Mirai memory 24">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="images/gallery-25.jpg" alt="Mirai memory 25">
-                    </div>
-                    
                 </div>
-                
+
+
+                <button
+                    id="next-question"
+                    class="primary-button"
+                    type="button"
+                >
+                    Next →
+                </button>
 
             </div>
 
-            <!-- Gallery Leaderboard -->
+        </div>
 
-<div id="gallery-leaderboard" class="leaderboard hidden">
 
-    <div class="leaderboard-heading">
+        <!-- Quiz Result -->
 
-        <span>🏆</span>
+        <div id="quiz-result" class="quiz-result hidden">
 
-        <h3>
-            Mirai's Leaderboard
+            <div class="result-celebration">
+
+                <div class="result-balloons">
+                    🎈 🎊 🎈
+                </div>
+
+                <h3>
+                    You Did It! 🎉
+                </h3>
+
+                <p id="result-name">
+                    Player
+                </p>
+
+                <div class="score-circle">
+
+                    <span id="final-score">
+                        0
+                    </span>
+
+                    <small>
+                        / 20
+                    </small>
+
+                </div>
+
+                <p>
+                    Thanks for playing with Mirai 💜
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Leaderboard -->
+
+        <div id="leaderboard" class="leaderboard">
+
+            <div class="leaderboard-heading">
+
+                <span>🏆</span>
+
+                <h3>
+                    Mirai's Leaderboard
+                </h3>
+
+                <span>🏆</span>
+
+            </div>
+
+
+            <div
+                id="leaderboard-list"
+                class="leaderboard-list"
+            >
+
+                <!-- Firebase quiz results will appear here -->
+
+                <p class="empty-leaderboard">
+                    Be the first one to play! 💜
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     IMAGE MODAL
+========================================= -->
+
+<div id="image-modal" class="modal hidden">
+
+    <button
+        id="close-image-modal"
+        class="modal-close"
+        type="button"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+    <img
+        id="modal-image"
+        src=""
+        alt="Mirai memory"
+    >
+
+</div>
+
+
+
+<!-- ========================================
+     STORY MODAL
+========================================= -->
+
+<div id="story-modal" class="modal hidden">
+
+    <div class="story-modal-card">
+
+        <button
+            id="close-story-modal"
+            class="modal-close"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <p class="modal-small-title">
+            A little memory 💜
+        </p>
+
+        <h3 id="modal-story-name">
+            Name
         </h3>
 
-        <span>🏆</span>
-
-    </div>
-
-    <div id="gallery-leaderboard-list" class="leaderboard-list">
-
-        <p class="empty-leaderboard">
-            Be the first one to play! 💜
+        <p id="modal-story-text">
+            Story
         </p>
 
     </div>
 
 </div>
-            
-        </section>
 
 
 
-        <!-- ====================================
-             3. WRITE YOUR STORY
-        ====================================== -->
+<!-- ========================================
+     SUCCESS / TOAST MESSAGE
+========================================= -->
 
-        <section id="stories" class="section stories-section">
+<div
+    id="toast"
+    class="toast"
+    aria-live="polite"
+>
+    <span id="toast-message"></span>
+</div>
 
-            
-            <div class="section-heading">
 
-                <p class="section-small-title">
-                    Tell us something 💌
-                </p>
 
-                <h2>
-                    Write Your
-                    <span>Story With Mirai</span>
-                </h2>
+<!-- ========================================
+     BIRTHDAY MUSIC
+========================================= -->
 
-                <p>
-                    Leave a little piece of your memories here 💜
-                </p>
-
-            </div>
-
-
-            <!-- Story Form -->
-
-            <div class="story-card">
-
-                <form id="story-form">
-
-                    <div class="input-group">
-
-                        <label for="story-name">
-                            Your name
-                        </label>
-
-                        <input type="text" id="story-name" placeholder="Write your name..." required>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="story-text">
-                            Your story with Mirai
-                        </label>
-
-                        <textarea id="story-text" rows="6" placeholder="Write something beautiful about Mirai..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <button type="submit" class="primary-button">
-                        Submit Story 💌
-                    </button>
-
-                </form>
-
-            </div>
-
-
-            <!-- Stories Cards -->
-
-            <div id="stories-container" class="stories-container">
-
-                <!-- Firebase stories will appear here -->
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ====================================
-             4. ADD PHOTO
-        ====================================== -->
-
-        <section id="add-photo" class="section add-photo-section">
-            
-            <div class="section-heading">
-
-                <p class="section-small-title">
-                    Make another memory 📷
-                </p>
-
-                <h2>
-                    Add a
-                    <span>Photo With Mirai</span>
-                </h2>
-
-                <p>
-                    Have a special photo with Mirai?
-                    Add it to the memories 💜
-                </p>
-
-            </div>
-
-
-            <div class="photo-upload-card">
-
-                <form id="photo-form">
-
-                    <div class="input-group">
-
-                        <label for="photo-name">
-                            Your name
-                        </label>
-
-                        <input type="text" id="photo-name" placeholder="Write your name..." required>
-
-                    </div>
-
-
-                    <div class="photo-input">
-                        <label for="photo-file">
-
-                            <span class="upload-icon">
-                                📸
-                            </span>
-
-                            <span>
-                                Choose your photo
-                            </span>
-
-                            <small>
-                                Tap here to upload
-                            </small>
-
-                        </label>
-
-                        <input type="file" id="photo-file" accept="image/*" required>
-
-                    </div>
-
-
-                    <div id="photo-preview" class="photo-preview hidden">
-
-                        <img id="preview-image" src="" alt="Selected photo">
-
-                    </div>
-
-
-                    <button type="submit" class="primary-button">
-                        Add To Memories 📸
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ====================================
-             5. PLAY WITH MIRAI
-        ====================================== -->
-
-        <section id="quiz" class="section quiz-section">
-
-            
-            <div class="section-heading">
-
-                <p class="section-small-title">
-                    How well do you know her? 👀
-                </p>
-
-                <h2>
-                    Play With
-                    <span>Mirai 🎮</span>
-                </h2>
-
-                <p>
-                    Think you know everything about Mirai?
-                    Let's find out 👀💜
-                </p>
-
-            </div>
-
-
-            <!-- Quiz Start -->
-
-            <div id="quiz-start" class="quiz-start-card">
-
-                <div class="quiz-icon">
-                    🎮
-                </div>
-
-                <h3>
-                    Ready to play?
-                </h3>
-
-                <p>
-                    Answer 20 questions about Mirai
-                    and see how well you know her!
-                </p>
-
-                <div class="input-group">
-
-                    <label for="player-name">
-                        Enter your name
-                    </label>
-
-                    <input type="text" id="player-name" placeholder="Your name..." required>
-
-                </div>
-
-                <button id="start-quiz" class="primary-button" type="button">
-                    Play With Mirai 🎮
-                </button>
-
-            </div>
-
-
-            <!-- Quiz Game -->
-
-            <div id="quiz-game" class="quiz-game hidden">
-
-                <div class="quiz-top">
-
-                    <span id="question-number">
-                        Question 1 / 20
-                    </span>
-
-                    <span id="current-score">
-                        Score: 0
-                    </span>
-
-                </div>
-
-
-                <div class="question-card">
-
-                    <h3 id="question-text">
-                        Question goes here
-                    </h3>
-
-                    <div id="answer-options" class="answer-options">
-
-                        <!-- Options inserted by JavaScript -->
-
-                    </div>
-                    <button id="next-question" class="primary-button" type="button">
-                        Next →
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Quiz Result -->
-
-            <div id="quiz-result" class="quiz-result hidden">
-
-                <div class="result-celebration">
-
-                    <div class="result-balloons">
-                        🎈 🎊 🎈
-                    </div>
-
-                    <h3>
-                        You Did It! 🎉
-                    </h3>
-
-                    <p id="result-name">
-                        Player
-                    </p>
-
-                    <div class="score-circle">
-
-                        <span id="final-score">
-                            0
-                        </span>
-
-                        <small>
-                            / 20
-                        </small>
-
-                    </div>
-
-                    <p>
-                        Thanks for playing with Mirai 💜
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Leaderboard -->
-
-            <div id="leaderboard" class="leaderboard">
-
-                <div class="leaderboard-heading">
-
-                    <span>🏆</span>
-
-                    <h3>
-                        Mirai's Leaderboard
-                    </h3>
-
-                    <span>🏆</span>
-
-                </div>
-
-
-                <div id="leaderboard-list" class="leaderboard-list">
-
-                    <!-- Firebase quiz results will appear here -->
-
-                    <p class="empty-leaderboard">
-                        Be the first one to play! 💜
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ========================================
-         IMAGE MODAL
-    ========================================= -->
-
-    <div id="image-modal" class="modal hidden">
-
-        <button id="close-image-modal" class="modal-close" type="button" aria-label="Close">
-            ×
-        </button>
-
-        <img id="modal-image" src="" alt="Mirai memory">
-
-    </div>
-
-
-    <!-- ========================================
-         STORY MODAL
-    ========================================= -->
-
-    <div id="story-modal" class="modal hidden">
-
-        <div class="story-modal-card">
-
-            <button id="close-story-modal" class="modal-close" type="button" aria-label="Close">
-                ×
-            </button>
-
-            <p class="modal-small-title">
-                A little memory 💜
-            </p>
-
-            <h3 id="modal-story-name">
-                Name
-            </h3>
-
-            <p id="modal-story-text">
-                Story
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ========================================
-         SUCCESS / TOAST MESSAGE
-    ========================================= -->
-
-    <div id="toast" class="toast" aria-live="polite">
-        <span id="toast-message"></span>
-    </div>
-
-
-    <!-- ========================================
-         JAVASCRIPT
-    ========================================= -->
-<audio id="birthday-music" loop preload="auto">
-    <source src="Mirai.mp3" type="audio/mpeg">
+<audio
+    id="birthday-music"
+    loop
+    preload="auto"
+>
+    <source
+        src="Mirai.mp3"
+        type="audio/mpeg"
+    >
 </audio>
-    <script type="module" src="script.js"></script>
 
-</body>
 
-</html>
+
+<!-- ========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    type="module"
+    src="script.js"
+></script>
+
+</body></html>                    
