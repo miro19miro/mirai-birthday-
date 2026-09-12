@@ -1949,3 +1949,323 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================
+   MIRAI MAGICAL BIRTHDAY DOOR
+========================================= */
+
+#birthday-door-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at center,
+            #fff3ff 0%,
+            #e8c8ed 45%,
+            #6f3d7d 100%
+        );
+    cursor: pointer;
+}
+
+/* Door */
+
+.birthday-door {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b5aa9,
+            #713d7d 45%,
+            #4d2859
+        );
+
+    border: 3px solid rgba(255,255,255,.45);
+
+    box-shadow:
+        inset 0 0 60px rgba(255,255,255,.12),
+        inset 0 0 120px rgba(34,10,42,.35);
+
+    transition:
+        transform 1.5s cubic-bezier(.77,0,.18,1),
+        box-shadow 1.5s ease;
+}
+
+.left-door {
+    left: 0;
+    transform-origin: left center;
+    border-right-width: 2px;
+}
+
+.right-door {
+    right: 0;
+    transform-origin: right center;
+    border-left-width: 2px;
+}
+
+/* Decorative emojis */
+
+.door-decoration {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    padding: 30px;
+    pointer-events: none;
+}
+
+.door-decoration span {
+    display: block;
+    width: 25%;
+    text-align: center;
+    font-size: clamp(28px, 5vw, 65px);
+
+    filter:
+        drop-shadow(0 5px 8px rgba(0,0,0,.25));
+
+    animation: magicalFloat 3s ease-in-out infinite;
+}
+
+.door-decoration span:nth-child(2n) {
+    animation-delay: .5s;
+}
+
+.door-decoration span:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+@keyframes magicalFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+/* Door text */
+
+.door-title {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow:
+        0 4px 15px rgba(40,10,50,.6);
+}
+
+.door-title small {
+    font-size: clamp(10px, 1.5vw, 18px);
+    letter-spacing: 5px;
+    opacity: .9;
+}
+
+.door-title strong {
+    margin: 8px 0;
+
+    font-size: clamp(32px, 6vw, 75px);
+    font-family: Georgia, serif;
+    letter-spacing: 3px;
+}
+
+.door-title span {
+    font-size: clamp(12px, 2vw, 24px);
+    letter-spacing: 3px;
+}
+
+/* Center knobs */
+
+.door-knob {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.18);
+    border: 2px solid rgba(255,255,255,.5);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.25);
+
+    backdrop-filter: blur(5px);
+}
+
+.left-door .door-knob {
+    right: 22px;
+}
+
+.right-door .door-knob {
+    left: 22px;
+}
+
+/* Center */
+
+.door-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    pointer-events: none;
+}
+
+.center-magic {
+    font-size: clamp(35px, 6vw, 70px);
+
+    filter:
+        drop-shadow(0 0 15px rgba(255,255,255,.8));
+
+    animation: magicGlow 1.5s ease-in-out infinite;
+}
+
+.center-lock {
+    font-size: clamp(30px, 5vw, 60px);
+}
+
+@keyframes magicGlow {
+    0%, 100% {
+        transform: scale(1) rotate(-8deg);
+    }
+
+    50% {
+        transform: scale(1.15) rotate(8deg);
+    }
+}
+
+/* Hint */
+
+.door-hint {
+    position: absolute;
+    z-index: 30;
+
+    left: 50%;
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    background: rgba(40,15,50,.5);
+    border: 1px solid rgba(255,255,255,.3);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+}
+
+.door-hint p {
+    margin: 0;
+
+    font-size: clamp(13px, 2vw, 18px);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.door-hint span {
+    font-size: 20px;
+}
+
+/* Knock animation */
+
+#birthday-door-intro.knock-1 .birthday-door {
+    animation: doorKnock .18s ease;
+}
+
+#birthday-door-intro.knock-2 .birthday-door {
+    animation: doorKnockStrong .3s ease;
+}
+
+@keyframes doorKnock {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-7px);
+    }
+}
+
+@keyframes doorKnockStrong {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-12px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+/* OPEN */
+
+#birthday-door-intro.open .left-door {
+    transform: translateX(-100%);
+}
+
+#birthday-door-intro.open .right-door {
+    transform: translateX(100%);
+}
+
+#birthday-door-intro.open .door-center,
+#birthday-door-intro.open .door-hint {
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+#birthday-door-intro.open {
+    pointer-events: none;
+    background: transparent;
+    transition:
+        background .8s ease,
+        opacity 1.5s ease 1s;
+}
+
+#birthday-door-intro.open.finished {
+    opacity: 0;
+    pointer-events: none;
+}
