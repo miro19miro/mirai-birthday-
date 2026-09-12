@@ -1848,3 +1848,37 @@ if (birthdayDoorIntro) {
     });
 
 }
+
+/* =========================================
+   HANGING PHOTOS SCROLL ANIMATION
+========================================= */
+
+const hangingPhotos =
+    document.querySelectorAll(".hanging-photo");
+
+const hangingObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "hanging-visible"
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+hangingPhotos.forEach((photo) => {
+    hangingObserver.observe(photo);
+});
