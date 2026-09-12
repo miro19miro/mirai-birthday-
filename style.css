@@ -91,7 +91,7 @@ a {
     width: 100%;
     min-height: 100vh;
     padding: 100px 20px;
-    overflow: visible;
+    overflow: hidden;
 } 
 
 .section-heading {
@@ -2577,4 +2577,19 @@ a {
 
 .section-hanging-photo img {
     pointer-events: none;
+}
+
+/* =========================================
+   PREVENT HORIZONTAL SCROLL
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
 }
