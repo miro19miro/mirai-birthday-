@@ -1597,6 +1597,10 @@ a {
     backdrop-filter: blur(8px);
 }
 
+.modal.show {
+    display: flex !important;
+} 
+
 .modal>img {
     max-width: min(90vw, 700px);
     max-height: 88vh;
@@ -1696,6 +1700,8 @@ a {
     line-height: 1.8;
 
     color: var(--text-light);
+
+    overflow-wrap: anywhere;
 }
 
 
