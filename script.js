@@ -1784,3 +1784,67 @@ console.log(
          startMusicAfterInteraction
      );
  }
+
+/* =========================================
+   MIRAI MAGICAL BIRTHDAY DOOR
+========================================= */
+
+const birthdayDoorIntro =
+    document.getElementById("birthday-door-intro");
+
+const doorText =
+    document.getElementById("door-text");
+
+let doorClicks = 0;
+let doorOpening = false;
+
+if (birthdayDoorIntro) {
+
+    birthdayDoorIntro.addEventListener("click", () => {
+
+        if (doorOpening) return;
+
+        doorClicks++;
+
+        if (doorClicks === 1) {
+
+            birthdayDoorIntro.classList.remove("knock-2");
+            birthdayDoorIntro.classList.add("knock-1");
+
+            doorText.textContent =
+                "Knock... 👀";
+
+            setTimeout(() => {
+                birthdayDoorIntro.classList.remove("knock-1");
+            }, 250);
+        }
+
+        else if (doorClicks === 2) {
+
+            birthdayDoorIntro.classList.remove("knock-1");
+            birthdayDoorIntro.classList.add("knock-2");
+
+            doorText.textContent =
+                "Knock knock! 🍉🪄";
+
+            setTimeout(() => {
+
+                birthdayDoorIntro.classList.add("open");
+                doorOpening = true;
+
+                launchConfetti();
+
+                setTimeout(() => {
+                    birthdayDoorIntro.classList.add("finished");
+                }, 1500);
+
+                setTimeout(() => {
+                    birthdayDoorIntro.remove();
+                }, 3000);
+
+            }, 400);
+        }
+
+    });
+
+}
