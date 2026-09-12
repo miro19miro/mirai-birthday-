@@ -1427,12 +1427,30 @@ async function finishQuiz() {
         );
     }
 }
+
 // ======================================================
 // 24. LEADERBOARD
 // ======================================================
+
 async function loadLeaderboard() {
 
-    if (!leaderboardList) return;
+    // Quiz leaderboard
+    const quizLeaderboardList =
+        document.getElementById("leaderboard-list");
+
+    // Gallery leaderboard
+    const galleryLeaderboardList =
+        document.getElementById("gallery-leaderboard-list");
+
+
+    // If neither leaderboard exists, stop
+    if (
+        !quizLeaderboardList &&
+        !galleryLeaderboardList
+    ) {
+        return;
+    }
+
 
     try {
 
@@ -1441,13 +1459,16 @@ async function loadLeaderboard() {
                 collection(db, "quizResults")
             );
 
+
         const results = [];
+
 
         snapshot.forEach(doc => {
 
             const data = doc.data();
 
-            // Ignore old/broken documents
+
+            // Ignore broken documents
             if (
                 typeof data.score !== "number" ||
                 !data.name
@@ -1455,12 +1476,21 @@ async function loadLeaderboard() {
                 return;
             }
 
+
             results.push({
+
                 id: doc.id,
+
                 name: data.name,
+
                 score: Number(data.score),
-                total: Number(data.total) || 20,
-                createdAt: data.createdAt
+
+                total:
+                    Number(data.total) || 20,
+
+                createdAt:
+                    data.createdAt
+
             });
 
         });
@@ -1470,8 +1500,11 @@ async function loadLeaderboard() {
         results.sort((a, b) => {
 
             if (b.score !== a.score) {
+
                 return b.score - a.score;
+
             }
+
 
             const dateA =
                 a.createdAt?.seconds || 0;
@@ -1479,52 +1512,82 @@ async function loadLeaderboard() {
             const dateB =
                 b.createdAt?.seconds || 0;
 
+
             return dateA - dateB;
+
         });
 
 
-        leaderboardList.innerHTML = "";
+        // ==========================================
+        // CREATE LEADERBOARD
+        // ==========================================
+
+        function fillLeaderboard(list) {
+
+            if (!list) return;
 
 
-        if (results.length === 0) {
+            list.innerHTML = "";
 
-            leaderboardList.innerHTML = `
-                <p class="empty-message">
-                    No scores yet 👀💜
-                </p>
-            `;
 
-            return;
+            if (results.length === 0) {
+
+                list.innerHTML = `
+                    <p class="empty-leaderboard">
+                        Be the first one to play! 💜
+                    </p>
+                `;
+
+                return;
+            }
+
+
+            results.forEach(
+                (result, index) => {
+
+                    const row =
+                        document.createElement("div");
+
+
+                    row.className =
+                        "leaderboard-row";
+
+
+                    row.innerHTML = `
+                        <span class="rank">
+                            #${index + 1}
+                        </span>
+
+                        <span class="leader-name">
+                            ${escapeHTML(result.name)}
+                        </span>
+
+                        <span class="leader-score">
+                            ${result.score}/${result.total}
+                        </span>
+                    `;
+
+
+                    list.appendChild(row);
+
+                }
+            );
+
         }
 
 
-        results.forEach((result, index) => {
+        // ==========================================
+        // UPDATE BOTH LEADERBOARDS
+        // ==========================================
 
-            const row =
-                document.createElement("div");
-
-            row.className =
-                "leaderboard-row";
-
-
-            row.innerHTML = `
-                <span class="rank">
-                    #${index + 1}
-                </span>
-
-                <span class="leader-name">
-                    ${escapeHTML(result.name)}
-                </span>
-
-                <span class="leader-score">
-                    ${result.score}/${result.total}
-                </span>
-            `;
+        fillLeaderboard(
+            quizLeaderboardList
+        );
 
 
-            leaderboardList.appendChild(row);
-
-        });
+        fillLeaderboard(
+            galleryLeaderboardList
+        );
 
 
     } catch (error) {
@@ -1534,15 +1597,31 @@ async function loadLeaderboard() {
             error
         );
 
-        leaderboardList.innerHTML = `
+
+        const errorMessage = `
             <p class="empty-message">
                 Couldn't load the leaderboard 😭
             </p>
         `;
+
+
+        if (quizLeaderboardList) {
+
+            quizLeaderboardList.innerHTML =
+                errorMessage;
+
+        }
+
+
+        if (galleryLeaderboardList) {
+
+            galleryLeaderboardList.innerHTML =
+                errorMessage;
+
+        }
+
     }
 }
-
-
 
 // ======================================================
 // 25. HTML ESCAPE
