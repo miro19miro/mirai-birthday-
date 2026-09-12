@@ -773,17 +773,21 @@ function openStoryModal(story) {
     modalStoryText.textContent =
         story.story;
 
+    storyModal.classList.remove("hidden");
     storyModal.classList.add("show");
-}
 
+    document.body.style.overflow = "hidden";
+}
 
 function closeStory() {
 
     if (!storyModal) return;
 
     storyModal.classList.remove("show");
-}
+    storyModal.classList.add("hidden");
 
+    document.body.style.overflow = "";
+}
 
 if (closeStoryModalButton) {
 
