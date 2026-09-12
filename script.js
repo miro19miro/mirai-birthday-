@@ -1850,13 +1850,13 @@ if (birthdayDoorIntro) {
 }
 
 /* =========================================
-   HANGING PHOTOS SCROLL ANIMATION
+   SECTION HANGING PHOTOS SCROLL ANIMATION
 ========================================= */
 
-const hangingPhotos =
-    document.querySelectorAll(".hanging-photo");
+const sectionHangingPhotos =
+    document.querySelectorAll(".section-hanging-photo");
 
-const hangingObserver =
+const sectionHangingObserver =
     new IntersectionObserver(
         (entries) => {
 
@@ -1878,7 +1878,8 @@ const hangingObserver =
         }
     );
 
+sectionHangingPhotos.forEach((photo) => {
 
-hangingPhotos.forEach((photo) => {
-    hangingObserver.observe(photo);
+    sectionHangingObserver.observe(photo);
+
 });
