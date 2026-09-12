@@ -700,7 +700,7 @@ async function loadStories() {
             const card =
                 document.createElement("div");
 
-            card.className = "story-card";
+            card.className = "story-result-card";
 
 
             const shortStory =
